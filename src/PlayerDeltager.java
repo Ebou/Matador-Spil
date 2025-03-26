@@ -82,7 +82,7 @@ public class PlayerDeltager {
 
         for (Deed deed : new ArrayList<>(deeds)) {
             deed.setOwner(null);
-            
+
         }
         deeds.clear();
     }
