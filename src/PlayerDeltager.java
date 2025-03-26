@@ -74,13 +74,15 @@ public class PlayerDeltager {
     public boolean isBankrupt() {
         return bankrupt;
     }
-    
+
     public void goBankrupt() {
         this.bankrupt = true;
+        this.name = this.name + " (OUT OF GAME)";
         System.out.println("GAME OVER: " + name + " has gone bankrupt and is out of the game!");
-        
+
         for (Deed deed : new ArrayList<>(deeds)) {
             deed.setOwner(null);
+            
         }
         deeds.clear();
     }
