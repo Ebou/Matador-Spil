@@ -5,7 +5,7 @@ public class MatadorGame {
     private Game game;
     private TextUI ui;
     private FileIO fileIO;
-    
+
     public MatadorGame() {
         this.game = new Game();
         this.ui = new TextUI();
@@ -70,6 +70,7 @@ public class MatadorGame {
                     ui.displayMessage(player.getName() + " paid 1000 to get out of jail.");
                     handleNormalTurn(player);
                 } else {
+                    // what happens when stuck in jail? later on mby bankrupt the player
                     ui.displayMessage("Not enough money to pay the jail fee!");
                 }
                 break;
@@ -87,7 +88,9 @@ public class MatadorGame {
                 }
                 break;
             case 3:
-                ui.displayMessage("Get out of jail card not implemented yet.");
+                player.setInJail(false);
+                ui.displayMessage(player.getName() + " force used a breakfree from jail card and got out of jail!");
+                handleNormalTurn(player);
                 break;
         }
     }
