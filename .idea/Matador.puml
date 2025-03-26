@@ -1,0 +1,49 @@
+@startuml "Matador"
+title "Matador"
+object Game
+object GameBoard
+object PlayerDeltager
+object Dice
+object Field
+object Jail
+object Parking
+object Start
+object Card
+object Chance
+object Tax
+object Deed
+object Property
+object Company
+object Shipping
+object Brewery
+object Plot
+object Building
+object User
+
+Game o-- GameBoard
+Game o-- PlayerDeltager
+Game o-- Dice
+
+GameBoard o-- Field
+Field <|-- Jail
+Field <|-- Parking
+Field <|-- Start
+
+PlayerDeltager o-- Card
+PlayerDeltager o-- Deed
+Card <|-- Chance
+Card <|-- Tax
+Deed <|-- Property
+Deed <|-- Plot
+Property o-- Company
+
+Company <|-- Shipping
+Company <|-- Brewery
+Company <|-- Tax
+
+Plot o-- Building
+
+User o-- Dice
+User o-- Card
+
+@enduml
